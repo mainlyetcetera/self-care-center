@@ -30,6 +30,10 @@ h1 {
 }
 
 #meditation-icon {
-  height: 150px;
-  width: 150px;
+  height: 80px;
+  width: 80px;
+}
+
+#response {  
+  background-color: #ffffff;
 }
