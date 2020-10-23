@@ -34,6 +34,10 @@ h1 {
   width: 80px;
 }
 
-#response {  
+#response {
+  display: flex;
+  justify-content: center;
   background-color: #ffffff;
+  height: 120px;
+  width: 600px;
 }
