@@ -33,14 +33,16 @@ h1 {
 }
 
 #meditation-icon {
-  height: 80px;
-  width: 80px;
+  height: 55%;
+  width: 12%;
 }
 
 #response {
   display: flex;
   justify-content: center;
+  align-items: center;
   background-color: #ffffff;
-  height: 120px;
-  width: 600px;
+  height: 15%;
+  width: 60%;
+  border-radius: 10px;
 }
