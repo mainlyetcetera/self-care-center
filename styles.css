@@ -7,8 +7,7 @@ white - #ffffff;
 black - #000000;
 */
 
-* {
-  border: solid black;
+* {  
   font-family: 'Quicksand';
   font: sans-serif;
 }
@@ -44,7 +43,7 @@ h3 {
   color: #ffffff;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 4.15%;
+  margin-top: 3.5%;
   width: 32%;
   display: flex;
   justify-content: center;
