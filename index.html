@@ -7,9 +7,18 @@
   <body>
     <h1>✨Self Care Center✨</h1>
     <h3>Which type of message?</h3>
-    <section id='radio-button-box'> <!-- radio button box -->
-      <!-- radio buttons -->
-      <button>Receive Message</button> <!-- button to display msg and get rid of meditation icon -->      
+    <section id='radio-button-box'>
+      <article class="radio-buttons">
+        <div class="affirmation-button">
+          <input type="radio" id="affirmation">
+          <label class="affirmation-label" for="affirmation">affirmation</label>
+        </div>
+        <div class="mantra-button">
+          <input type="radio" id="mantra">
+          <label class="mantra-label" for="mantra">mantra</label>
+        </div>
+      </article>
+      <button>Receive Message</button> <!-- button to display msg and get rid of meditation icon -->
     </section>
     <section id='response'>
       <img id='meditation-icon' src='/Users/chimera/Desktop/turing/1mod/projects/self-care-center/assets/meditate.svg'>
