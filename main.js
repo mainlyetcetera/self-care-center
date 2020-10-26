@@ -35,6 +35,8 @@ var mantraRadio = document.querySelector('#mantra');
 var receiveMsg =  document.querySelector('.rcv-msg');
 var medIcon = document.querySelector('.meditation-icon');
 var msgDisplay = document.querySelector('.msg');
+var timeoutId;
+console.log(medIcon.classList);
 
 receiveMsg.addEventListener('click', displayMsg);
 affRadio.addEventListener('click', determineType);
@@ -56,8 +58,21 @@ function getRandomIndex(msgs) {
 }
 
 function toggleMsgOrIcon() {
-  medIcon.classList.toggle('hidden');
-  msgDisplay.classList.toggle('hidden');
+  medIcon.classList.toggle('fade-out');
+  hideIcon();
+  // msgDisplay.classList.toggle('hidden');
+}
+
+function hideIcon() {
+  console.log(medIcon.classList);
+  timeoutId = setTimeout(function() {
+    medIcon.classList.toggle('hidden');
+  }, 3000);
+  console.log(medIcon.classList);
+}
+
+function test() {
+
 }
 
 function generateMsg() {
@@ -71,5 +86,9 @@ function displayMsg() {
   msgDisplay.innerText = msg;
   if (!medIcon.classList.value.includes('hidden')) {
     toggleMsgOrIcon();
-  }  
+  }
 }
+
+// console.log(typeof medIcon.classList.toggle('hidden'));
+// console.log(typeof generateMsg);
+console.log(medIcon.classList);
