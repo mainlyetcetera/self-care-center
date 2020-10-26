@@ -10,18 +10,19 @@
     <section id='radio-button-box'>
       <article class="radio-buttons">
         <div class="affirmation-button">
-          <input type="radio" id="affirmation">
+          <input type="radio" id="affirmation" name="msg-type">
           <label class="affirmation-label" for="affirmation">affirmation</label>
         </div>
         <div class="mantra-button">
-          <input type="radio" id="mantra">
+          <input type="radio" id="mantra" name ="msg-type">
           <label class="mantra-label" for="mantra">mantra</label>
         </div>
       </article>
-      <button>Receive Message</button> <!-- button to display msg and get rid of meditation icon -->
+      <button class="rcv-msg">Receive Message</button>
     </section>
     <section id='response'>
-      <img id='meditation-icon' src='/Users/chimera/Desktop/turing/1mod/projects/self-care-center/assets/meditate.svg'>
+      <img class='meditation-icon' src='/Users/chimera/Desktop/turing/1mod/projects/self-care-center/assets/meditate.svg'>
+      <article class='msg hidden'></article>
     </section>
     <script type="text/javascript" src="main.js"></script>
   </body>
