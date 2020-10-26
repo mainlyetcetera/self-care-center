@@ -1,4 +1,3 @@
-// global variables
 var affirmations = [
   'I forgive myself and set myself free.',
   'I believe I can be all that I want to be.',
@@ -31,20 +30,16 @@ var mantras = [
   'Onward and upward.',
   'I am the sky, the rest is weather.'
 ];
-
-// query selectors - organized
 var affRadio = document.querySelector('#affirmation');
 var mantraRadio = document.querySelector('#mantra');
 var receiveMsg =  document.querySelector('.rcv-msg');
 var medIcon = document.querySelector('.meditation-icon');
 var msgDisplay = document.querySelector('.msg');
 
-// event listeners
 receiveMsg.addEventListener('click', displayMsg);
 affRadio.addEventListener('click', determineType);
 mantraRadio.addEventListener('click', determineType);
 
-// functions - organized
 function determineType() {
   var chosen;
   if (affRadio.checked === true) {
@@ -74,10 +69,7 @@ function generateMsg() {
 function displayMsg() {
   var msg = generateMsg();
   msgDisplay.innerText = msg;
-  toggleMsgOrIcon();
-}
-
-function test() {
-  toggleMsgOrIcon();
-  msgDisplay.innerText = 'rawr';  
+  if (!medIcon.classList.value.includes('hidden')) {
+    toggleMsgOrIcon();
+  }  
 }
