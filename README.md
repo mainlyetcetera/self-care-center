@@ -1,4 +1,49 @@
 # Self Care Center
+## Contributors
+*Eric Campbell*
+*Joe Haefling*
+
+### How to Use
+Upon page load, you will see your **main interactive tool**, the radio buttons in the center of the page. These buttons determine which type of self-care you receive! Clicking on one changes the background gradient color to suit that particular type of self-care! Clicking the `Receive Message` button will calmly fade out the meditator below and fade in your message! You may continue to click the `Receive Message` button for additional phrases!
+
+#### Technologies
+
+- JavaScript
+- HTML
+- CSS
+- Github
+- Google Chrome Developer Tools
+
+#### Wins
+
+- successful matching of the comp
+- successful setup of HTML and CSS pages
+- successful fade in and out of messages
+- successful fade out of meditation icon
+- attempted to make code dry by incorporating more functions to handle repetitive lines of code
+- successfully make buttons change color on hover
+
+#### Areas of Improvement
+
+- need to figure out and implement background gradients fading in and out so they're not so jarring
+- can certainly have made the css more dry
+- likely some spots I could make the JS more dry, as well
+- did not finish the chosen CYOA
+- took forever to actually be able to match the comp
+- removed change in background color as was too jarring
+
+### Reflection
+My main goal was to become stronger with my use of *HTML* and *CSS*. My learning style is to beat my head against a problem enough times that it becomes familiar to me. This was how I decided on the `CSS Animations` as my **CYOA**. I wanted to play with these technologies more!
+
+I definitely discovered the good practice of doing much of my styling using the *Developer Tools*, then transitioning that writing over to the editor. It was a huge pain to make each small style change in the editor to go see if it did anything I wanted it to do over on the page itself. This did, however, run me into another small issue: the sizing of the page is slightly different with the tools pulled up, so I ended up doing some minor adjustment after using the tools to accommodate for that.
+
+I fixed a small glitch that occurred as I was fading the messages in and out. It looks like due to my fade in and fade out effects both taking 3 seconds allowed for the briefest of moments where the message could fully display before disappearing and fading in. I fixed this by making the fade out take .1 second longer. This made it impossible for that window of time to occur!
+
+I took out the changing of the background color gradient because, without the fade in and out, it is simply too jarring and too distracting from the page as a whole.
+
+Overall, I consider this project a win. I have gone from next-to-no experience writing and manipulating `HTML` and `CSS` to having some. I am more confident navigating those types of pages now and troubleshooting issues as they arise.
+
+
 ## Overview
 How can I care for myself? One way is with affirmations and mantras!
 Affirmations are thoughts of positive self-empowerment, meant to assert your self-worth.
@@ -6,7 +51,7 @@ Mantras are repetive phrases that are repeated again and again during mindfulnes
 
 This Solo Challenge gives students and instructors the opportunity to get a pulse on where you are with the foundational concepts of Module 1 curriculum. Students should use this as an opportunity to challenge themselves and work completely independently. Google can (and probably should!) be used, but any other code base should not be referenced. Instructors will be able to use your work, both completion of functionality and code quality, to determine where you stand and if you are behind for this point in the module, provide supports to intervene.
 
-The spec for this project can be found [here](https://frontend.turing.io/projects/module-1/self-care-center.html). 
+The spec for this project can be found [here](https://frontend.turing.io/projects/module-1/self-care-center.html).
 
 ## Learning Goals
 
@@ -27,10 +72,10 @@ The spec for this project can be found [here](https://frontend.turing.io/project
 - Read this README thoroughly, then begin working!
 
 ## Workflow
-Make sure you're utilizing git best practices (branches) and commiting frequently. 
+Make sure you're utilizing git best practices (branches) and commiting frequently.
 
 ### Day One Deliverable
-- Read the spec sheet closely. 
+- Read the spec sheet closely.
 - Send the link to your forked repo to your Project Manager
 
 Reflect on the the following questions in a DM to your Project Manager:
@@ -61,7 +106,7 @@ Reflect on the the following questions in a DM to your Project Manager:
 
 ### Choose your own Adventure
 
-In the interest of giving you opportunities to individualize the skills you build, this project's main goal is to provide various different paths you can take. Along these different paths you will encounter different problems and solve them in different ways. As you make choices about which features to add, you should consider which features align with your strengths, which features would challenge you to grow, and which features you'd find to be useful in this application. Choose one or more of the following features to add. Some of them build on others, so be sure to read them all before choosing. 
+In the interest of giving you opportunities to individualize the skills you build, this project's main goal is to provide various different paths you can take. Along these different paths you will encounter different problems and solve them in different ways. As you make choices about which features to add, you should consider which features align with your strengths, which features would challenge you to grow, and which features you'd find to be useful in this application. Choose one or more of the following features to add. Some of them build on others, so be sure to read them all before choosing.
 
 _NOTE: You should absolutely not be working on this unless your UI is solid and you are 100% sure that your MVP is fully functional and bug free._
 
@@ -97,7 +142,7 @@ _NOTE: None of this needs to persist on page refresh, unless you also complete t
 _NOTE: None of this needs to persist on page refresh, unless you also complete the local storage feature_
 
 #### User can delete a message
-- Add the ability to delete a messge (ie: when a message shows up, show a button that says "I don't like this messge" (or something similar), and remove it from the list so that it will not show up any more. Make sure to alert the user in some way that the message has been removed. 
+- Add the ability to delete a messge (ie: when a message shows up, show a button that says "I don't like this messge" (or something similar), and remove it from the list so that it will not show up any more. Make sure to alert the user in some way that the message has been removed.
 
 _NOTE: None of this needs to persist on page refresh, unless you also complete the local storage feature_
 
@@ -114,7 +159,7 @@ _NOTE: None of this needs to persist on page refresh, unless you also complete t
 - Add a loading animation when a user clicks the "Receive Message" button to simulate searching for a message. Hint - You will need to use CSS Keyframes, and a Javascript timeout function for this.
 - Make your buttons grow in size or change color when the user hovers over them, enticing them to click the dang thing.
 - When the message appears, the text should fade in, from white to black to deliver the message in a calming way.
-- Have the background change depending on if a user has selected an affirmation or mantra. Choose a calming secondary gradient for each type of message Remember your user experience and animate this in gradually! 
+- Have the background change depending on if a user has selected an affirmation or mantra. Choose a calming secondary gradient for each type of message Remember your user experience and animate this in gradually!
 
 #### Login Page
 - Refactor your application so that the user lands on a "Login" page
@@ -127,7 +172,7 @@ _NOTE: None of this needs to persist on page refresh, unless you also complete t
 - Do some research and determine how to make your app respond to the user's screen size.
 - Layout and spacing should adapt to mobile, tablet, desktop and extra large screens.
 
-#### Local Storage 
+#### Local Storage
 - Only do this if you've added the "Favorite a Message" functionality.
 - Do some research to utilize Local Storage, so that the user's favorite messages will persist, even if they reload the page.
 
@@ -154,7 +199,7 @@ My possibilities are endless.
 
 I am worthy of my dreams.
 
-I am enough. 
+I am enough.
 
 I deserve to be healthy and feel good.
 
@@ -173,7 +218,7 @@ Don’t let yesterday take up too much of today.
 
 Every day is a second chance.
 
-Tell the truth and love everyone. 
+Tell the truth and love everyone.
 
 I am free from sadness.
 
