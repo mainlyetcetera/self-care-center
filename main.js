@@ -30,6 +30,7 @@ var mantras = [
   'Onward and upward.',
   'I am the sky, the rest is weather.'
 ];
+var body = document.querySelector('body');
 var affRadio = document.querySelector('#affirmation');
 var mantraRadio = document.querySelector('#mantra');
 var receiveMsg =  document.querySelector('.rcv-msg');
@@ -47,8 +48,10 @@ function determineType() {
   var chosen;
   if (affRadio.checked === true) {
     chosen = affirmations;
+    body.className = 'affirmation-gradient';
   } else if (mantraRadio.checked === true) {
     chosen = mantras;
+    body.className = 'mantra-gradient';
   }
 
   return chosen;
