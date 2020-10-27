@@ -35,8 +35,11 @@ var mantraRadio = document.querySelector('#mantra');
 var receiveMsg =  document.querySelector('.rcv-msg');
 var medIcon = document.querySelector('.meditation-icon');
 var msgDisplay = document.querySelector('.msg');
+var rcvMsgFunction = displayFirstMsg;
+var msg;
+var timeoutId;
 
-receiveMsg.addEventListener('click', displayMsg);
+receiveMsg.addEventListener('click', selectFunction);
 affRadio.addEventListener('click', determineType);
 mantraRadio.addEventListener('click', determineType);
 
@@ -55,9 +58,16 @@ function getRandomIndex(msgs) {
   return Math.floor(Math.random() * msgs.length);
 }
 
-function toggleMsgOrIcon() {
-  medIcon.classList.toggle('hidden');
-  msgDisplay.classList.toggle('hidden');
+function toggleMsgAndIcon() {
+  medIcon.classList.toggle('fade-out');
+  hideIcon();
+}
+
+function hideIcon() {
+  timeoutId = setTimeout(function() {
+    medIcon.classList.toggle('hidden');
+    msgDisplay.classList.toggle('hidden');
+  }, 3000);
 }
 
 function generateMsg() {
@@ -66,10 +76,30 @@ function generateMsg() {
   return type[randomIndex];
 }
 
-function displayMsg() {
-  var msg = generateMsg();
+function selectFunction() {
+  rcvMsgFunction();
+}
+
+function displayFirstMsg() {
+  msg = generateMsg();
   msgDisplay.innerText = msg;
   if (!medIcon.classList.value.includes('hidden')) {
-    toggleMsgOrIcon();
-  }  
+    toggleMsgAndIcon();
+  }
+
+  rcvMsgFunction = displaySecondMsg;
+}
+
+function displaySecondMsg() {
+  fadeMsgInAndOut();
+  timeoutId = setTimeout(function() {
+    msg = generateMsg();
+    msgDisplay.innerText = msg;
+    fadeMsgInAndOut();
+  }, 3000);
+}
+
+function fadeMsgInAndOut() {
+  msgDisplay.classList.toggle('fade-in');
+  msgDisplay.classList.toggle('fade-out');
 }
