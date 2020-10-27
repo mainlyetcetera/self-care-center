@@ -48,10 +48,8 @@ function determineType() {
   var chosen;
   if (affRadio.checked === true) {
     chosen = affirmations;
-    body.className = 'affirmation-gradient';
   } else if (mantraRadio.checked === true) {
     chosen = mantras;
-    body.className = 'mantra-gradient';
   }
 
   return chosen;
