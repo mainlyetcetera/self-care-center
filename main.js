@@ -1,4 +1,4 @@
-var affirmations = [
+const affirmations = [
   'I forgive myself and set myself free.',
   'I believe I can be all that I want to be.',
   'I am in the process of becoming the best version of myself.',
@@ -13,7 +13,7 @@ var affirmations = [
   'I honor my body by trusting the signals that it sends me.',
   'I manifest perfect health by making smart choices.'
 ];
-var mantras = [
+const mantras = [
   'Breathing in, I send myself love. Breathing out, I send love to someone else who needs it.',
   'Don’t let yesterday take up too much of today.',
   'Every day is a second chance.',
@@ -30,15 +30,15 @@ var mantras = [
   'Onward and upward.',
   'I am the sky, the rest is weather.'
 ];
-var body = document.querySelector('body');
-var affRadio = document.querySelector('#affirmation');
-var mantraRadio = document.querySelector('#mantra');
-var receiveMsg =  document.querySelector('.rcv-msg');
-var medIcon = document.querySelector('.meditation-icon');
-var msgDisplay = document.querySelector('.msg');
-var rcvMsgFunction = displayFirstMsg;
-var msg;
-var timeoutId;
+const body = document.querySelector('body');
+const affRadio = document.querySelector('#affirmation');
+const mantraRadio = document.querySelector('#mantra');
+const receiveMsg =  document.querySelector('.rcv-msg');
+const medIcon = document.querySelector('.meditation-icon');
+const msgDisplay = document.querySelector('.msg');
+let rcvMsgFunction = displayFirstMsg;
+let msg;
+let timeoutId;
 
 receiveMsg.addEventListener('click', selectFunction);
 affRadio.addEventListener('click', determineType);
