@@ -48,7 +48,7 @@ const determineType = () => {
 
 const getRandomIndex = msgs => Math.floor(Math.random() * msgs.length);
 
-function toggleMsgAndIcon() {
+const toggleMsgAndIcon = () => {
   medIcon.classList.toggle('fade-out');
   hideIcon();
 }
