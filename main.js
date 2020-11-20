@@ -60,10 +60,9 @@ const hideIcon = () => {
   }, 1750)
 }
 
-function generateMsg() {
-  var type = determineType();
-  var randomIndex = getRandomIndex(type);
-  return type[randomIndex];
+const generateMsg = () => {
+  let type = determineType();
+  return type[getRandomIndex(type)];
 }
 
 function selectFunction() {
