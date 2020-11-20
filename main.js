@@ -40,14 +40,9 @@ let rcvMsgFunction = displayFirstMsg;
 let msg;
 let timeoutId;
 
-function determineType() {
-  var chosen;
-  if (affRadio.checked === true) {
-    chosen = affirmations;
-  } else if (mantraRadio.checked === true) {
-    chosen = mantras;
-  }
-
+const determineType = () => {
+  let chosen;
+  affRadio.checked ? chosen = affirmations : chosen = mantras;
   return chosen;
 }
 
