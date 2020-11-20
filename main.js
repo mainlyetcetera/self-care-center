@@ -59,9 +59,7 @@ const hideIcon = () => {
 
 const generateMsg = () => chosen[getRandomIndex(chosen)];
 
-function selectFunction() {
-  rcvMsgFunction();
-}
+const selectFn = () => rcvMsgFunction();
 
 function displayFirstMsg() {
   msg = generateMsg();
@@ -87,6 +85,6 @@ function fadeMsgInAndOut() {
   msgDisplay.classList.toggle('fade-out');
 }
 
-receiveMsg.addEventListener('click', selectFunction);
+receiveMsg.addEventListener('click', selectFn);
 affRadio.addEventListener('click', determineType);
 mantraRadio.addEventListener('click', determineType);
