@@ -57,10 +57,7 @@ const hideIcon = () => {
   }, 1750)
 }
 
-const generateMsg = () => {
-  let type = determineType();
-  return type[getRandomIndex(type)];
-}
+const generateMsg = () => chosen[getRandomIndex(chosen)];
 
 function selectFunction() {
   rcvMsgFunction();
