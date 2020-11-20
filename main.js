@@ -58,6 +58,11 @@ const hideIcon = () => {
 
 const generateMsg = () => chosen[getRandomIndex(chosen)];
 
+const setMsg = () => {
+  msg = generateMsg();
+  msgDisplay.innerText = msg;
+}
+
 const selectFn = () => rcvMsgFunction();
 
 const displayFirstMsg = () => {
