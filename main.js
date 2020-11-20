@@ -57,7 +57,7 @@ const hideIcon = () => {
   timeoutId = setTimeout(() => {
     medIcon.classList.toggle('hidden');
     msgDisplay.classList.toggle('hidden');
-  }, 3000)
+  }, 1750)
 }
 
 function generateMsg() {
@@ -86,7 +86,7 @@ function displaySecondMsg() {
     msg = generateMsg();
     msgDisplay.innerText = msg;
     fadeMsgInAndOut();
-  }, 3000);
+  }, 1750);
 }
 
 function fadeMsgInAndOut() {
