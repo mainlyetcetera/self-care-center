@@ -40,10 +40,6 @@ let rcvMsgFunction = displayFirstMsg;
 let msg;
 let timeoutId;
 
-receiveMsg.addEventListener('click', selectFunction);
-affRadio.addEventListener('click', determineType);
-mantraRadio.addEventListener('click', determineType);
-
 function determineType() {
   var chosen;
   if (affRadio.checked === true) {
@@ -104,3 +100,7 @@ function fadeMsgInAndOut() {
   msgDisplay.classList.toggle('fade-in');
   msgDisplay.classList.toggle('fade-out');
 }
+
+receiveMsg.addEventListener('click', selectFunction);
+affRadio.addEventListener('click', determineType);
+mantraRadio.addEventListener('click', determineType);
