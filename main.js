@@ -36,7 +36,6 @@ const mantraRadio = document.querySelector('#mantra');
 const receiveMsg =  document.querySelector('.rcv-msg');
 const medIcon = document.querySelector('.meditation-icon');
 const msgDisplay = document.querySelector('.msg');
-let rcvMsgFunction = displayFirstMsg;
 let msg;
 let timeoutId;
 let chosen;
@@ -61,13 +60,10 @@ const generateMsg = () => chosen[getRandomIndex(chosen)];
 
 const selectFn = () => rcvMsgFunction();
 
-function displayFirstMsg() {
+const displayFirstMsg = () => {
   msg = generateMsg();
   msgDisplay.innerText = msg;
-  if (!medIcon.classList.value.includes('hidden')) {
-    toggleMsgAndIcon();
-  }
-
+  !medIcon.classList.value.includes('hidden') ? toggleMsgAndIcon() : msg;
   rcvMsgFunction = displaySecondMsg;
 }
 
@@ -88,3 +84,4 @@ function fadeMsgInAndOut() {
 receiveMsg.addEventListener('click', selectFn);
 affRadio.addEventListener('click', determineType);
 mantraRadio.addEventListener('click', determineType);
+let rcvMsgFunction = displayFirstMsg;
