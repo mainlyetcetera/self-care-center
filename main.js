@@ -13,6 +13,7 @@ const affirmations = [
   'I honor my body by trusting the signals that it sends me.',
   'I manifest perfect health by making smart choices.'
 ];
+
 const mantras = [
   'Breathing in, I send myself love. Breathing out, I send love to someone else who needs it.',
   'Don’t let yesterday take up too much of today.',
@@ -30,6 +31,7 @@ const mantras = [
   'Onward and upward.',
   'I am the sky, the rest is weather.'
 ];
+
 const body = document.querySelector('body');
 const affRadio = document.querySelector('#affirmation');
 const mantraRadio = document.querySelector('#mantra');
