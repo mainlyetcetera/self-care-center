@@ -76,7 +76,7 @@ const displaySecondMsg = () => {
   }, 1750);
 }
 
-function fadeMsgInAndOut() {
+const fadeMsgInAndOut = () => {
   msgDisplay.classList.toggle('fade-in');
   msgDisplay.classList.toggle('fade-out');
 }
