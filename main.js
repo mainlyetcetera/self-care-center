@@ -67,9 +67,9 @@ const displayFirstMsg = () => {
   rcvMsgFunction = displaySecondMsg;
 }
 
-function displaySecondMsg() {
+const displaySecondMsg = () => {
   fadeMsgInAndOut();
-  timeoutId = setTimeout(function() {
+  timeoutId = setTimeout(() => {
     msg = generateMsg();
     msgDisplay.innerText = msg;
     fadeMsgInAndOut();
