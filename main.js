@@ -53,11 +53,11 @@ const toggleMsgAndIcon = () => {
   hideIcon();
 }
 
-function hideIcon() {
-  timeoutId = setTimeout(function() {
+const hideIcon = () => {
+  timeoutId = setTimeout(() => {
     medIcon.classList.toggle('hidden');
     msgDisplay.classList.toggle('hidden');
-  }, 3000);
+  }, 3000)
 }
 
 function generateMsg() {
