@@ -63,20 +63,14 @@ const setMsg = () => {
   msgDisplay.innerText = msg;
 }
 
-const selectFn = () => rcvMsgFunction();
+const displayMsg = () => !medIcon.classList.value.includes('hidden') 
+  ? (toggleMsgAndIcon(), setMsg()) 
+  : swapMsgs();
 
-const displayFirstMsg = () => {
-  msg = generateMsg();
-  msgDisplay.innerText = msg;
-  !medIcon.classList.value.includes('hidden') ? toggleMsgAndIcon() : msg;
-  rcvMsgFunction = displaySecondMsg;
-}
-
-const displaySecondMsg = () => {
+const swapMsgs = () => {
   fadeMsgInAndOut();
   timeoutId = setTimeout(() => {
-    msg = generateMsg();
-    msgDisplay.innerText = msg;
+    setMsg();
     fadeMsgInAndOut();
   }, 1750);
 }
@@ -86,7 +80,6 @@ const fadeMsgInAndOut = () => {
   msgDisplay.classList.toggle('fade-out');
 }
 
-receiveMsg.addEventListener('click', selectFn);
+receiveMsg.addEventListener('click', displayMsg);
 affRadio.addEventListener('click', determineType);
 mantraRadio.addEventListener('click', determineType);
-let rcvMsgFunction = displayFirstMsg;
