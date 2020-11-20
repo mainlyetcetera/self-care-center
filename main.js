@@ -32,7 +32,6 @@ const mantras = [
   'I am the sky, the rest is weather.'
 ];
 
-const body = document.querySelector('body');
 const affRadio = document.querySelector('#affirmation');
 const mantraRadio = document.querySelector('#mantra');
 const receiveMsg =  document.querySelector('.rcv-msg');
