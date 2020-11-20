@@ -39,12 +39,9 @@ const msgDisplay = document.querySelector('.msg');
 let rcvMsgFunction = displayFirstMsg;
 let msg;
 let timeoutId;
+let chosen;
 
-const determineType = () => {
-  let chosen;
-  affRadio.checked ? chosen = affirmations : chosen = mantras;
-  return chosen;
-}
+const determineType = () => affRadio.checked ? chosen = affirmations : chosen = mantras;
 
 const getRandomIndex = msgs => Math.floor(Math.random() * msgs.length);
 
