@@ -1,4 +1,4 @@
-var affirmations = [
+const affirmations = [
   'I forgive myself and set myself free.',
   'I believe I can be all that I want to be.',
   'I am in the process of becoming the best version of myself.',
@@ -13,7 +13,7 @@ var affirmations = [
   'I honor my body by trusting the signals that it sends me.',
   'I manifest perfect health by making smart choices.'
 ];
-var mantras = [
+const mantras = [
   'Breathing in, I send myself love. Breathing out, I send love to someone else who needs it.',
   'Don’t let yesterday take up too much of today.',
   'Every day is a second chance.',
@@ -30,77 +30,58 @@ var mantras = [
   'Onward and upward.',
   'I am the sky, the rest is weather.'
 ];
-var body = document.querySelector('body');
-var affRadio = document.querySelector('#affirmation');
-var mantraRadio = document.querySelector('#mantra');
-var receiveMsg =  document.querySelector('.rcv-msg');
-var medIcon = document.querySelector('.meditation-icon');
-var msgDisplay = document.querySelector('.msg');
-var rcvMsgFunction = displayFirstMsg;
-var msg;
-var timeoutId;
+const body = document.querySelector('body');
+const affRadio = document.querySelector('#affirmation');
+const mantraRadio = document.querySelector('#mantra');
+const receiveMsg =  document.querySelector('.rcv-msg');
+const medIcon = document.querySelector('.meditation-icon');
+const msgDisplay = document.querySelector('.msg');
+let msg;
+let timeoutId;
+let chosen;
 
-receiveMsg.addEventListener('click', selectFunction);
-affRadio.addEventListener('click', determineType);
-mantraRadio.addEventListener('click', determineType);
+const determineType = () => affRadio.checked ? chosen = affirmations : chosen = mantras;
 
-function determineType() {
-  var chosen;
-  if (affRadio.checked === true) {
-    chosen = affirmations;
-  } else if (mantraRadio.checked === true) {
-    chosen = mantras;
-  }
+const getRandomIndex = msgs => Math.floor(Math.random() * msgs.length);
 
-  return chosen;
-}
-
-function getRandomIndex(msgs) {
-  return Math.floor(Math.random() * msgs.length);
-}
-
-function toggleMsgAndIcon() {
+const toggleMsgAndIcon = () => {
   medIcon.classList.toggle('fade-out');
   hideIcon();
 }
 
-function hideIcon() {
-  timeoutId = setTimeout(function() {
+const hideIcon = () => {
+  timeoutId = setTimeout(() => {
     medIcon.classList.toggle('hidden');
     msgDisplay.classList.toggle('hidden');
-  }, 3000);
+  }, 1750)
 }
 
-function generateMsg() {
-  var type = determineType();
-  var randomIndex = getRandomIndex(type);
-  return type[randomIndex];
-}
+const generateMsg = () => chosen[getRandomIndex(chosen)];
 
-function selectFunction() {
-  rcvMsgFunction();
-}
+const selectFn = () => rcvMsgFunction();
 
-function displayFirstMsg() {
+const displayFirstMsg = () => {
   msg = generateMsg();
   msgDisplay.innerText = msg;
-  if (!medIcon.classList.value.includes('hidden')) {
-    toggleMsgAndIcon();
-  }
-
+  !medIcon.classList.value.includes('hidden') ? toggleMsgAndIcon() : msg;
   rcvMsgFunction = displaySecondMsg;
 }
 
-function displaySecondMsg() {
+const displaySecondMsg = () => {
   fadeMsgInAndOut();
-  timeoutId = setTimeout(function() {
+  timeoutId = setTimeout(() => {
     msg = generateMsg();
     msgDisplay.innerText = msg;
     fadeMsgInAndOut();
-  }, 3000);
+  }, 1750);
 }
 
-function fadeMsgInAndOut() {
+const fadeMsgInAndOut = () => {
   msgDisplay.classList.toggle('fade-in');
   msgDisplay.classList.toggle('fade-out');
 }
+
+receiveMsg.addEventListener('click', selectFn);
+affRadio.addEventListener('click', determineType);
+mantraRadio.addEventListener('click', determineType);
+let rcvMsgFunction = displayFirstMsg;

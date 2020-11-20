@@ -95,11 +95,11 @@ label:hover {
 }
 
 .fade-in {
-  animation: fadeIn ease 3s;
+  animation: fadeIn ease 1.75s;
 }
 
 .fade-out {
-  animation: fadeOut ease 3.1s;
+  animation: fadeOut ease 1.76s;
 }
 
 @keyframes fadeIn {
