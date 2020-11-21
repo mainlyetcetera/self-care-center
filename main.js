@@ -38,7 +38,8 @@ const msgDisplay = document.querySelector('.msg');
 let msg;
 let chosen;
 
-const determineType = (event) => event.target.id === 'affirmation' ? chosen = affirmations
+const determineType = (event) => event.target.id === 'affirmation' 
+  ? chosen = affirmations
   : event.target.id === 'mantra' ? chosen = mantras : event;    
 
 const getRandomIndex = msgs => Math.floor(Math.random() * msgs.length);
