@@ -36,7 +36,6 @@ const buttonsBox = document.querySelector('#radio-button-box');
 const medIcon = document.querySelector('.meditation-icon');
 const msgDisplay = document.querySelector('.msg');
 let msg;
-// let timeoutId;
 let chosen;
 
 const determineType = (event) => event.target.id === 'affirmation' ? chosen = affirmations
