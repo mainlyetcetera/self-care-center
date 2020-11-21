@@ -36,10 +36,10 @@ const buttonsBox = document.querySelector('#radio-button-box');
 const medIcon = document.querySelector('.meditation-icon');
 const msgDisplay = document.querySelector('.msg');
 let msg;
-let timeoutId;
 let chosen;
 
-const determineType = (event) => event.target.id === 'affirmation' ? chosen = affirmations
+const determineType = (event) => event.target.id === 'affirmation' 
+  ? chosen = affirmations
   : event.target.id === 'mantra' ? chosen = mantras : event;    
 
 const getRandomIndex = msgs => Math.floor(Math.random() * msgs.length);
@@ -49,12 +49,10 @@ const toggleMsgAndIcon = () => {
   hideIcon();
 }
 
-const hideIcon = () => {
-  timeoutId = setTimeout(() => {
-    medIcon.classList.toggle('hidden');
-    msgDisplay.classList.toggle('hidden');
-  }, 1750)
-}
+const hideIcon = () => window.setTimeout(() => {
+  medIcon.classList.toggle('hidden');
+  msgDisplay.classList.toggle('hidden');
+}, 1750); 
 
 const generateMsg = () => chosen[getRandomIndex(chosen)];
 
@@ -68,8 +66,8 @@ const displayMsg = () => !medIcon.classList.value.includes('hidden')
   : swapMsgs();
 
 const swapMsgs = () => {
-  fadeMsgInAndOut();
-  timeoutId = setTimeout(() => {
+  fadeMsgInAndOut();  
+  window.setTimeout(() => {
     setMsg();
     fadeMsgInAndOut();
   }, 1750);
