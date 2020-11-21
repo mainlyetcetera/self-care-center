@@ -32,16 +32,15 @@ const mantras = [
   'I am the sky, the rest is weather.'
 ];
 
-const affRadio = document.querySelector('#affirmation');
-const mantraRadio = document.querySelector('#mantra');
-const receiveMsg =  document.querySelector('.rcv-msg');
+const buttonsBox = document.querySelector('#radio-button-box');
 const medIcon = document.querySelector('.meditation-icon');
 const msgDisplay = document.querySelector('.msg');
 let msg;
 let timeoutId;
 let chosen;
 
-const determineType = () => affRadio.checked ? chosen = affirmations : chosen = mantras;
+const determineType = (event) => event.target.id === 'affirmation' ? chosen = affirmations
+  : event.target.id === 'mantra' ? chosen = mantras : event;    
 
 const getRandomIndex = msgs => Math.floor(Math.random() * msgs.length);
 
@@ -81,6 +80,8 @@ const fadeMsgInAndOut = () => {
   msgDisplay.classList.toggle('fade-out');
 }
 
-receiveMsg.addEventListener('click', displayMsg);
-affRadio.addEventListener('click', determineType);
-mantraRadio.addEventListener('click', determineType);
+buttonsBox.addEventListener('click', (event) => {
+  event.target.id === 'affirmation' ? determineType(event) : event;
+  event.target.id === 'mantra' ? determineType(event) : event;
+  event.target.className === 'rcv-msg' ? displayMsg(event) : event;
+});
